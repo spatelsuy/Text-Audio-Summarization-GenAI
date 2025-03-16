@@ -4,9 +4,9 @@ A Generative AI-powered meeting summarization tool that efficiently extracts key
 
 ## 📌 Text & Audio Summarization with Generative AI  
 
-This repository provides Python scripts for summarizing text and audio using **Generative AI** models like IBM Granite, BART, and Whisper. It enables automatic summarization of long transcripts and audio recordings for efficient information retrieval. 🚀  
+This repository provides Python scripts for summarizing text and audio using **Generative AI** models. It enables automatic summarization of long transcripts and audio recordings for meeting minutes and efficient information retrieval.  
 
-### 🔥 Features  
+### 📝 Features  
 ✅ Summarizes large text documents  
 ✅ Converts speech to text and extracts key insights  
 ✅ Uses state-of-the-art AI models (IBM Granite, BART, Whisper)  
