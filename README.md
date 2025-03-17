@@ -78,6 +78,15 @@ whisper meeting_audio.mp3 --language English --model small
 ```
 <sup>(Note: for me it was a small file zise of about 2 minutes, for big file size you may need to try other options of Whisper)</sup>  
 
-<ins>***Summarize the Text***</ins>
+<ins>***Summarize the Text***</ins>  
+**Let's use model="t5-small"** to summarize the meeting text. It is small file, hence using t5-small.  
+><ins>Refer the files</ins>  
+><sup>Summarize_T5.py  
+>Meeting_Audio.txt (the meeting input text converted from an MP3 file)  
+>Meeting_Minutes.txt
+</sup>
+
+
+
 
 
