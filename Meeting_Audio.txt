@@ -1,0 +1,11 @@
+In recent times, scammers and hackers have been approaching ordinary citizens, falsely
+claiming to represent government agencies.
+To protect the public from failing prey to such fraud, it would be beneficial for the
+government to include a QR code-based system.
+In this approach, each legitimate government officer could be assigned a unique QR code.
+The general public would then be able to scan the code to verify whether the person
+is genuine, confirm the legitimacy of the reported issues, and validate the authenticity
+of any request or demand made.
+This QR code system would provide a quick and easy way for citizens to differentiate
+between real government officials and scammers, ensuring greater transparency and security
+for the public.
