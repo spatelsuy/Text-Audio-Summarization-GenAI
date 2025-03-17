@@ -13,4 +13,10 @@ This repository provides Python scripts for summarizing text and audio using **G
 ✅ Supports handling large inputs via chunking  
 
 ### 🛠️ Installation  
+The installation steps cover everything from setup to execution so that you can build your summarizer Gen AI tool on Windows and run it locally without relying on external APIs.
 
+**Install Python 3.8+**  
+During installation, check "Add Python to PATH".  
+After installation check version of Python from command prompt. It will also ensure PATH setup  
+```
+python --version
