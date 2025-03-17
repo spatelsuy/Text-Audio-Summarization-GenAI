@@ -29,6 +29,7 @@ Download FFmpeg for Windows from this [link](https://ffmpeg.org/download.html)
 Extract the files and add the bin folder to your system's PATH.  
 
 >**FFmpeg** is an open-source software library used for handling multimedia files and streams. It provides tools to convert audio and video formats to any other supported format.  
+
 >**Whisper** is an open-source speech recognition system developed by OpenAI. It is designed to transcribe spoken language into text. It supports multiple languages and various audio formats. If you have an audio format that is not supported by Whisper, you should use FFmpeg to convert the audio to Whisper supported format.  
 
 ```
