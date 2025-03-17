@@ -63,6 +63,15 @@ Note: Torch and PyTorch are both deep learning frameworks. Tourch is written in 
 
 >**Transformers (Hugging Face)** is a library for Natural Language Processing (NLP). It enables text summarization using pre-trained AI models like GPT (Generative Pre-trained Transformer), T5 (Text-to-Text Transfer Transformer), BERT (Bidirectional Encoder Representations from Transformers), and BART (Bidirectional and Auto-Regressive Transformers).  
 
+>**Vosk** is also an speech recognition system like Whisper. It requires less computational power than Whisper. Vosk is primarily for edge applications, suitable for devices with limited resources like mobile phones or IoT devices.
+
+>**Librosa** is a Python library for audio analysis and feature extraction. It helps analyze speech features like pitch, frequency, and tempo before transcription.
+
+>**NumPy** is a numerical computing library for Python. It helps process audio waveforms for analysis.
+
+>**Pydub** is a Python library for audio processing to convert MP3 → WAV (require for Whisper and Vosk).
+
+
 
 
 
