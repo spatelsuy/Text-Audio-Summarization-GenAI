@@ -69,9 +69,15 @@ Note: Torch and PyTorch are both deep learning frameworks. Tourch is written in 
 
 >**NumPy** is a numerical computing library for Python. It helps process audio waveforms for analysis.
 
->**Pydub** is a Python library for audio processing to convert MP3 → WAV (require for Whisper and Vosk).
+>**Pydub** is a Python library for audio processing to convert MP3 → WAV (require for Whisper and Vosk).   
 
+  
+<ins>***Convert audio file (meeting_audio.mp3) to text, copy the text to meeting_audio.txt***</ins>
+```
+whisper meeting_audio.mp3 --language English --model small
+```
+<sup>(Note: for me it was a small file zise of about 2 minutes, for big file size you may need to try other options of Whisper)</sup>  
 
-
+<ins>***Summarize the Text***</ins>
 
 
