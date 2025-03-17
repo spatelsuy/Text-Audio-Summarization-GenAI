@@ -86,6 +86,12 @@ whisper meeting_audio.mp3 --language English --model small
 >Meeting_Minutes.txt
 </sup>
 
+**We know now how to convert an audio to text and summarize it. Let's use a big text file of around 6000-7000 characters an use model="facebook/bart-large-cnn"**
+><ins>Refer the files</ins>  
+><sup>Summarize_bart_large_cnn.py  
+>Second.txt  
+>Second_summary.txt  
+></sup>
 
 
 
