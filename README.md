@@ -92,11 +92,13 @@ whisper meeting_audio.mp3 --language English --model small
 ></sup>
 
 # Let's combine all together   
-We will have a single Python file, that will take an audio file as input. The Python program will
+We will have a single Python file, that will take an audio file as input. The Python program will perform following. 
 >
 >- convert the file to WAV format using FFmpeg
 >- Extract text from the audio file and put it in a text file transcript.txt
 >- Use model bart-large-cnn to get summary of the transcript
+
+Refer the file **"audio_to_text_to_summary.py"**
 
 
 
