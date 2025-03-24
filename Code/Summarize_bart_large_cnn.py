@@ -35,9 +35,9 @@ def summarize_text(transcript_file):
 
 # Run summarization
 summary = summarize_text("Second.txt")
-print("📌 **Meeting Summary** 📌\n", summary)
+print("**Meeting Summary**\n", summary)
 
 # Save summary to file
 with open("Second_summary.txt", "w", encoding="utf-8") as f:
-    f.write("📌 **Meeting Summary** 📌\n\n")
+    f.write("**Meeting Summary**\n\n")
     f.write(summary)
