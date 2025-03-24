@@ -13,5 +13,5 @@ summary = summarize_text("Meeting_Audio.txt")
 print("Meeting Summary:\n", summary)
 
 with open("Meeting_Minutes.txt", "w", encoding="utf-8") as f:
-    f.write("📌 **Meeting Minutes** 📌\n\n")
+    f.write("**Meeting Minutes**\n\n")
     f.write(summary)
