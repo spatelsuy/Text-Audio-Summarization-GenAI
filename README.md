@@ -67,7 +67,7 @@ Note: Torch and PyTorch are both deep learning frameworks. Tourch is written in 
 >**Pydub** is a Python library for audio processing to convert MP3 → WAV (require for Whisper and Vosk).   
 
 
-## Test the components.
+# Test the components.
 ### Convert audio file (meeting_audio.mp3) to text, copy the text to meeting_audio.txt
 Let's test Whisper to ensure it is converting an audio to text.  
 ```
@@ -90,6 +90,15 @@ whisper meeting_audio.mp3 --language English --model small
 >Second.txt  
 >Second_summary.txt  
 ></sup>
+
+# Let's combine all together   
+We will have a single Python file, that will take an audio file as input. The Python program will
+>
+>- convert the file to WAV format using FFmpeg
+>- Extract text from the audio file and put it in a text file transcript.txt
+>- Use model bart-large-cnn to get summary of the transcript
+
+
 
 
 
