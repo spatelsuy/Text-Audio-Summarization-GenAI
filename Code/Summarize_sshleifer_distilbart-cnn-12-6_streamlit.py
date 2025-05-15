@@ -27,10 +27,17 @@ def summarize_text(text, summarizer, tokenizer):
         summaries.append(summary[0]['summary_text'])
     return " ".join(summaries)
 
+
+# Initialize session state variables if not already
+if "last_input_text" not in st.session_state:
+    st.session_state["last_input_text"] = ""
+if "last_summary" not in st.session_state:
+    st.session_state["last_summary"] = ""
+
+
 # Streamlit UI
 st.title("📄 Text Summarizer using GenAI")
 st.write("Choose an option to summarize your content (limited to 500 words).")
-
 st.write(
     "This is not a full GenAI application for industry-scale text summarization. "
     "It demonstrates how to use a transformer-based model specialized for summarization, "
@@ -39,11 +46,12 @@ st.write(
 )
 
 
+
 option = st.radio("Choose input method:", ("Upload TXT File", "Enter Text Manually"))
 
 summarizer, tokenizer = load_model()
 input_text = ""
-input_text_local = ""
+
 
 if option == "Upload TXT File":
     uploaded_file = st.file_uploader("Upload a .txt file", type="txt")
@@ -66,15 +74,19 @@ elif option == "Enter Text Manually":
                 st.error(f"Input has {word_count} words. Please reduce to 1000 or fewer.")
             else:
                 input_text = text
-                summary = summarize_text(input_text, summarizer, tokenizer)
-                st.success("✅ Summary generated:")
-                st.write(summary)
-            
 
-# Show summary
-if input_text and option == "Upload TXT File":
-    if st.button("Summarize File"):
-        with st.spinner("Summarizing the text from file..."):
+            
+# Summarize only if we have input_text
+if input_text:
+    if input_text == st.session_state["last_input_text"]:
+        # Same input as before, show stored summary
+        st.success("✅ Using cached summary:")
+        st.write(st.session_state["last_summary"])
+    else:
+        # New input, generate summary
+        with st.spinner("Summarizing..."):
             summary = summarize_text(input_text, summarizer, tokenizer)
+            st.session_state["last_input_text"] = input_text
+            st.session_state["last_summary"] = summary
             st.success("✅ Summary generated:")
-            st.write(summary) 
+            st.write(summary)
