@@ -29,7 +29,15 @@ def summarize_text(text, summarizer, tokenizer):
 
 # Streamlit UI
 st.title("📄 Text Summarizer using GenAI")
-st.write("Choose an option to summarize your content (limited to 1000 words).")
+st.write("Choose an option to summarize your content (limited to 500 words).")
+
+st.write(
+    "This is not a full GenAI application for industry-scale text summarization. "
+    "It demonstrates how to use a transformer-based model specialized for summarization, "
+    "specifically the distilled BART model `sshleifer/distilbart-cnn-12-6`. "
+    "Feel free to visit my [GitHub](https://github.com/spatelsuy/Text-Audio-Summarization-GenAI) for the code and more details."
+)
+
 
 option = st.radio("Choose input method:", ("Upload TXT File", "Enter Text Manually"))
 
@@ -48,7 +56,7 @@ if option == "Upload TXT File":
             input_text = text
 
 elif option == "Enter Text Manually":
-    text = st.text_area("Enter text (≤1000 words):", height=300)
+    text = st.text_area("Enter text (≤500 words):", height=300)
     if st.button("Summarize Text"):
         with st.spinner("Summarizing the text..."):
             word_count = len(text.split())
