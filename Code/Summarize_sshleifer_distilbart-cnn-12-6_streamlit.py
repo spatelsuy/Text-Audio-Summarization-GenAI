@@ -4,7 +4,7 @@ import subprocess
 import tempfile
 import os
 import ffmpeg
-import imageio-ffmpeg
+import import imageio_ffmpeg
 from transformers import pipeline, AutoTokenizer
 
 
