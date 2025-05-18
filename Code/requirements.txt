@@ -1,5 +1,5 @@
 streamlit
-transformers
+transformers>=4.30.0 --upgrade
 torch
 openai-whisper
 torchaudio         # required for audio processing
