@@ -106,6 +106,9 @@ if "last_summary" not in st.session_state:
 
 
 # Streamlit UI
+st.subheader("Environment Variables")
+st.write(os.environ)
+
 st.title("📄 Text Summarizer using GenAI")
 st.write("Choose an option to summarize your content (limited to 500 words).")
 st.write(
