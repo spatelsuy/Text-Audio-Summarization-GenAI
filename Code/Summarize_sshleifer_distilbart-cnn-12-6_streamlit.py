@@ -1,11 +1,12 @@
-import streamlit as st
 import whisper
 import subprocess
 import tempfile
 import os
 import ffmpeg
+import pathlib
 import imageio_ffmpeg
 from transformers import pipeline, AutoTokenizer
+import streamlit as st
 
 
 allowed_extensions = ["mp3", "mp4", "wav"]
@@ -33,13 +34,13 @@ def transcribe_audio(audio_path):
         #Mono channel (ac=1)
         
         try:
-            subprocess.run(
-                ["ffmpeg", "-i", input_audio_path, "-ar", "16000", "-ac", "1", "-y", converted_audio_path],
-                check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
-            )
-            #(
-            #    ffmpeg.input(input_audio_path).output(converted_audio_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
+            #subprocess.run(
+            #    ["ffmpeg", "-i", input_audio_path, "-ar", "16000", "-ac", "1", "-y", converted_audio_path],
+            #    check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
             #)
+            (
+                ffmpeg.input(input_audio_path).output(converted_audio_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
+            )
         except ffmpeg.Error as e:
             st.error("FFmpeg failed to process the audio file.")
             os.unlink(input_audio_path)
