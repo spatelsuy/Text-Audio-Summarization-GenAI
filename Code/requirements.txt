@@ -1,3 +1,6 @@
 streamlit
 transformers
 torch
+openai-whisper
+torchaudio         # required for audio processing
+ffmpeg-python      # to help with audio handling if needed
