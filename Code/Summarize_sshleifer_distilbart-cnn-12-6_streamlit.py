@@ -32,7 +32,6 @@ def transcribe_audio(audio_path):
         #16 kHz sample rate (ar=16000)
         #Mono channel (ac=1)
         
-        ffmpeg_binary = imageio_ffmpeg.get_ffmpeg_exe()
         try:
             (
                 ffmpeg.input(input_audio_path).output(converted_audio_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
