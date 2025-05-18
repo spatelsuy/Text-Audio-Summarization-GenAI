@@ -3,6 +3,7 @@ import whisper
 import subprocess
 import tempfile
 import os
+import ffmpeg
 from transformers import pipeline, AutoTokenizer
 
 
@@ -22,14 +23,19 @@ def transcribe_audio(audio_path):
 
     # Convert to WAV if necessary
     if not audio_path.name.endswith(".wav"):
+        #Creates a temporary file with .wav extension.
         with tempfile.NamedTemporaryFile(delete=False, suffix=".wav") as tmp_output:
             converted_audio_path = tmp_output.name
+        
+        #Uses ffmpeg to convert the uploaded file to:
+        #16 kHz sample rate (ar=16000)
+        #Mono channel (ac=1)
+        
         try:
-            subprocess.run(
-                ["ffmpeg", "-i", input_audio_path, "-ar", "16000", "-ac", "1", "-y", converted_audio_path],
-                check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL
+            (
+                ffmpeg.input(input_audio_path).output(converted_audio_path, ar=16000, ac=1).run(quiet=True, overwrite_output=True)
             )
-        except subprocess.CalledProcessError:
+        except ffmpeg.Error as e:
             st.error("FFmpeg failed to process the audio file.")
             os.unlink(input_audio_path)
             os.unlink(converted_audio_path)
