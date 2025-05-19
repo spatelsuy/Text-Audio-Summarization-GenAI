@@ -1,5 +1,6 @@
 import pathlib
 import subprocess
+import ffmpeg
 import streamlit as st
 
 # global variables
