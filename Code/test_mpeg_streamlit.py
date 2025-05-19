@@ -31,7 +31,7 @@ def convert_mp3_to_wav_ffmpeg_bytes2bytes(input_data: bytes) -> bytes:
     return proc.communicate(input=input_data)[0]
 
 
-@st.experimental_memo
+@st.cache_resource
 def on_file_change(uploaded_mp3_file):
     return convert_mp3_to_wav_ffmpeg_bytes2bytes(uploaded_mp3_file.getvalue())
 
