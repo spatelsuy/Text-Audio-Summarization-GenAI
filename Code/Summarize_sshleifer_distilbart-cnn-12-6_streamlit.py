@@ -106,41 +106,6 @@ if "last_summary" not in st.session_state:
 
 
 # Streamlit UI
-###############################3
-st.subheader("Environment Variables")
-st.subheader("Checking for FFmpeg")
-
-common_paths = ["/usr/local/bin/ffmpeg", "/usr/bin/ffmpeg", "/opt/bin/ffmpeg"]  # Add more if you know of others
-
-found_ffmpeg = False
-for path in common_paths:
-    if os.path.exists(path):
-        st.success(f"FFmpeg found at: {path}")
-        found_ffmpeg = True
-        try:
-            result = subprocess.run([path, '-version'], capture_output=True, text=True, check=True)
-            st.info(f"FFmpeg Version:\n{result.stdout}")
-        except subprocess.CalledProcessError as e:
-            st.error(f"Error running ffmpeg -version from {path}: {e}")
-        break
-
-if not found_ffmpeg:
-    st.error("FFmpeg not found in common locations.")
-    try:
-        result = subprocess.run(['ffmpeg', '-version'], capture_output=True, text=True, check=False)
-        st.info(f"Attempting 'ffmpeg -version' from PATH (result):\nReturn Code: {result.returncode}\nStdout: {result.stdout}\nStderr: {result.stderr}")
-        if result.returncode == 0:
-            st.success("'ffmpeg' command found in PATH, but direct checks failed.")
-        else:
-            st.error("'ffmpeg' command not found in PATH.")
-    except FileNotFoundError:
-        st.error("'ffmpeg' command not found (FileNotFoundError).")
-
-st.subheader("Environment Variables")
-st.write(os.environ)
-
-#####################################
-
 st.title("📄 Text Summarizer using GenAI")
 st.write("Choose an option to summarize your content (limited to 500 words).")
 st.write(
