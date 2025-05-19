@@ -4,7 +4,6 @@ import tempfile
 import os
 import ffmpeg
 import pathlib
-import imageio_ffmpeg
 from transformers import pipeline, AutoTokenizer
 import streamlit as st
 
