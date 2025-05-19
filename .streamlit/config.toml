@@ -1,2 +1,2 @@
 [server]
-maxUploadSize = 30 #size in MB
+maxUploadSize = 20 #size in MB
