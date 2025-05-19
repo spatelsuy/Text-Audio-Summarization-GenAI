@@ -106,8 +106,8 @@ if "last_summary" not in st.session_state:
 
 
 # Streamlit UI
-st.title("📄 Text Summarizer using GenAI")
-st.write("Choose an option to summarize your content (limited to 500 words).")
+st.title("📄 Text and Audio Summarizer using GenAI")
+st.write("Choose an option to summarize your content.")
 st.write(
     "This is not a full GenAI application for industry-scale text summarization. "
     "It demonstrates how to use a transformer-based model specialized for summarization, "
