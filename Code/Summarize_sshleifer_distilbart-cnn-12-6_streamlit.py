@@ -115,6 +115,7 @@ st.write(
     "This is not a full GenAI application for industry-scale text summarization. "
     "It demonstrates how to use a transformer-based model specialized for summarization, "
     "specifically the distilled BART model `sshleifer/distilbart-cnn-12-6`. "
+    "It also uses Whisper and FFmpeg to convert audio to text before summarization. "
     "Feel free to visit my [GitHub](https://github.com/spatelsuy/Text-Audio-Summarization-GenAI) for the code and more details."
 )
 
