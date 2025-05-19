@@ -107,7 +107,7 @@ if "last_summary" not in st.session_state:
 
 # Streamlit UI
 st.set_page_config(layout="wide")
-css = '<style>.main { max-width: 90%; padding-left: 5rem; padding-right: 5rem; }</style>'
+css = '<style>.main { max-width: 80%; padding-left: 10rem; padding-right: 10rem; }</style>'
 st.markdown(css, unsafe_allow_html=True)
 st.title("📄 Text and Audio Summarizer using GenAI")
 st.write("Choose an option to summarize your content.")
