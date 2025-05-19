@@ -3,5 +3,4 @@ transformers>=4.30.0
 torch
 openai-whisper
 torchaudio         # required for audio processing
-ffmpeg-python      # to help with audio handling if needed
-imageio-ffmpeg
+ffmpeg-python      # to help with audio handling if neede
