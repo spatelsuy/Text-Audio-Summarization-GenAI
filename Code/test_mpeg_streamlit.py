@@ -11,7 +11,7 @@ filename = None
 downloadfile = None
 
 
-@st.experimental_memo
+@st.cache_resource
 def convert_mp3_to_wav_ffmpeg_bytes2bytes(input_data: bytes) -> bytes:
     """
     It converts mp3 to wav using ffmpeg
