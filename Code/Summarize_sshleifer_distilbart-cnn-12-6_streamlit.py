@@ -156,7 +156,7 @@ if option == "Upload TXT File":
             input_text = text
 
 elif option == "Enter Text Manually":
-    text = st.text_area("Enter text (≤500 words):", height=300)
+    text = st.text_area("Enter text (<5500 words):", height=300)
     if st.button("Summarize Text"):
         with st.spinner("Summarizing the text..."):
             word_count = len(text.split())
@@ -186,5 +186,6 @@ if input_text:
             
     if "audio_text" in st.session_state:
         del st.session_state["audio_text"]
+
 
 
