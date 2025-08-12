@@ -150,8 +150,8 @@ if option == "Upload TXT File":
     if uploaded_file is not None:
         text = uploaded_file.read().decode("utf-8")
         word_count = len(text.split())
-        if word_count < 100 or word_count > 500:
-            st.error(f"File contains {word_count} words. Please enter word count between 100 and 500.")
+        if word_count < 100 or word_count > 5000:
+            st.error(f"File contains {word_count} words. Please enter word count between 100 and 5000.")
         else:
             input_text = text
 
@@ -162,8 +162,8 @@ elif option == "Enter Text Manually":
             word_count = len(text.split())
             if word_count == 0:
                 st.warning("Please enter some text.")
-            elif word_count < 100 or word_count > 500:
-                st.error(f"Input has {word_count} words. Please enter word count between 100 and 500.")
+            elif word_count < 100 or word_count > 5000:
+                st.error(f"Input has {word_count} words. Please enter word count between 100 and 5000.")
             else:
                 input_text = text
 
@@ -186,3 +186,4 @@ if input_text:
             
     if "audio_text" in st.session_state:
         del st.session_state["audio_text"]
+
